@@ -5,19 +5,21 @@
 #include <iostream>
 using namespace std;
 
-Dibuix::Dibuix(int w, int h)
-{
+Dibuix::Dibuix(int w, int h) {
     this->quantsN = 0;
     this->quantsS = 0;
     this->w = w;
     this->h = h;
+
+    for (auto &i : this->nord) {
+        i = nullptr;
+    }
+    for (auto &i : this->sud) {
+        i = nullptr;
+    }
 }
 
-Dibuix::Dibuix(int w, int h, FiguraGeometrica *fg){
-    this->quantsN = 0;
-    this->quantsS = 0;
-    this->w = w;
-    this->h = h;
+Dibuix::Dibuix(int w, int h, FiguraGeometrica *fg) : Dibuix (w, h){
     addFigura(fg);
 }
 

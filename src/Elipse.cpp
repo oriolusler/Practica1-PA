@@ -11,11 +11,6 @@ Elipse::Elipse(int x,int y, int colorC, int colorF, int radi1, int radi2) : Figu
 {
     this->radi1 = radi1;
     this->radi2 = radi2;
-
-    /*Setx(xc);
-    Sety(yc);
-    SetcolorC(colorCc);
-    SetcolorF(colorFc);*/
 }
 
 double Elipse :: area(){

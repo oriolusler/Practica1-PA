@@ -1,11 +1,9 @@
 #include "../include/Dibuix.h"
-#include "../include/FiguraGeometrica.h"
-#include "../include/Rectangle.h"
-#include "../include/Elipse.h"
 #include <iostream>
 using namespace std;
 
-Dibuix::Dibuix(int w, int h) {
+Dibuix::Dibuix(int w, int h) throw(char*){
+    if(w < 0 || h < 0) throw "Error Amplada o Alçada del dibuix negatives";
     this->quantsN = 0;
     this->quantsS = 0;
     this->w = w;
@@ -29,14 +27,15 @@ Dibuix::~Dibuix()
 }
 
 void Dibuix::toString(){
-    cout << "Figures Ubicades al nord:" << endl;
+    cout << "Figures Ubicades al nord:\n-------------------------" << endl;
     for(auto & f: nord) {
         if(f != nullptr) {
             f -> toString();
         }
     }
+    cout << "\n" << endl;
 
-    cout << "Figures Ubicades al sud:" << endl;
+    cout << "Figures Ubicades al sud:\n------------------------" << endl;
     for(auto & f: sud) {
         if(f != nullptr) {
             f -> toString();
@@ -45,19 +44,21 @@ void Dibuix::toString(){
 
 }
 
-bool Dibuix::addFigura(FiguraGeometrica *fg){    // NI IDEA DE SI FUNCIONA
+void Dibuix::addFigura(FiguraGeometrica *fg) throw(char*){
     if(fg->Getx() > this->w || fg->Gety() > h) throw "Error, Figura fora del dibuix";
     if(comprobarCentre(fg)) throw "Error, Centre de la figura ja ocupat";
     if(DeterminarPos(fg) == 0){ //SUD
-        sud[quantsS] = fg;
-        quantsS += 1;
-        return true;
+        if(quantsS <= 9) {     //MAX POSICIONS
+            sud[quantsS] = fg;
+            quantsS += 1;
+        }
     } else if(DeterminarPos(fg) == 1){ //NORD
-        nord[quantsN] = fg;
-        quantsN += 1;
-        return true;
+        if(quantsN <= 9) {
+            nord[quantsN] = fg;
+            quantsN += 1;
+        }
     }
-    return false;
+
 }
 
 bool Dibuix::comprobarCentre(FiguraGeometrica *fg){
@@ -107,7 +108,7 @@ bool Dibuix::buscarFigura(FiguraGeometrica *f, int i){
      return false;
 }
 
-bool Dibuix::remFigura(FiguraGeometrica *f) throw(char*){        // FALTA MILLORAR IMPLEMENTACIÓ
+bool Dibuix::remFigura(FiguraGeometrica *f) throw(char*){        // FALTA MILLORAR IMPLEMENTACIÓ (FUNCIONA)
     int pos = DeterminarPos(f);
     if(!buscarFigura(f, pos)) throw  "Error, Figura no trobada";
     if(pos == 0){ //SUD
@@ -139,16 +140,16 @@ bool Dibuix::remFigura(FiguraGeometrica *f) throw(char*){        // FALTA MILLOR
     return false;
 }
 
-int Dibuix::remFigura(int i){
+int Dibuix::remFigura(int i){ // FALTA MILLORAR IMPLEMENTACIO (FUNCIONA)
     int total = 0;
     for(auto & f: nord) {
-        if(f->GetcolorF() == i) {
+        if(f != nullptr && f->GetcolorF() == i) {
             remFigura(f);
             total += 1;
         }
     }
     for(auto & f: sud) {
-        if(f->GetcolorF() == i) {
+        if(f != nullptr && f->GetcolorF() == i) {
             remFigura(f);
             total +=1;
         }

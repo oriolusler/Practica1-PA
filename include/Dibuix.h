@@ -8,7 +8,7 @@
 class Dibuix
 {
     public:
-        Dibuix(int, int);
+        Dibuix(int, int) throw(char*);
         Dibuix(int, int, FiguraGeometrica*);
         virtual ~Dibuix();
         void toString();
@@ -16,12 +16,9 @@ class Dibuix
         int Geth() { return h; }
         int Getw() { return w; }
 
-        int GetquantsN() { return quantsN; }
-        int GetquantsS() { return quantsS; }
-
         double getArea();
 
-        bool addFigura(FiguraGeometrica *);
+        void addFigura(FiguraGeometrica *) throw(char*);
 
         bool operator < (Dibuix *);
         bool operator > (Dibuix *);

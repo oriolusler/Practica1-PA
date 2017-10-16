@@ -29,23 +29,22 @@ void FiguraGeometrica::toString(){
 /*
 UAmb contorn [VERMELL/BLAU/VERD/NEGRE/BLANC] i  farcit [VERMELL/BLAU/VERD/NEGRE/BLANC] Amb una �rea de [valorArea]
 */
-    cout << "Ubicacio x: " << x << " Ubicacio y: " << y << endl;
-    cout << "Amb contorn " << colorC <<" i  farcit " << colorF << endl;
+cout << "Ubicacio x: " << x << " Ubicacio y: " << y << endl;
+cout << "Amb contorn " << colorC <<" i  farcit " << colorF << endl;
 
 }
 
 bool FiguraGeometrica::operator < (FiguraGeometrica *f){
-    return area() < f->area();
+  return area() < f->area();
 }
 
 bool FiguraGeometrica::operator > (FiguraGeometrica *f){
-    return area() > f->area();
+  return area() > f->area();
 }
 
 bool FiguraGeometrica::operator == (FiguraGeometrica *f){
-    return area() == f->area();
+  return area() == f->area();
 }
 
 FiguraGeometrica::~FiguraGeometrica(){//dtor
 }
-

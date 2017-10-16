@@ -5,24 +5,18 @@
 
 using namespace std;
 
-Rectangle::Rectangle(int w, int h, int x , int y, int colorF, int colorC) : FiguraGeometrica (x, y, colorC, colorF)
-{
+Rectangle::Rectangle(int w, int h, int x , int y, int colorF, int colorC) : FiguraGeometrica (x, y, colorC, colorF) {
     if(w < 0 || h < 0) throw invalid_argument("Te una medida negativa |Rectangle.cpp | 10");
 
     this->w = w;
     this->h = h;
-
-    /*Setx(xc);     VA fora perq en el constructor ja li dones els paramentres que van a figura geometrica
-    Sety(yc);
-    SetcolorC(colorCc);
-    SetcolorF(colorFc);*/
 
     if(esQuadrat()) quantsQ++;
 
 }
 
 double Rectangle :: area(){
-    return Getw() *Geth() ;
+     return Getw() *Geth() ;
 
 }
 
@@ -34,10 +28,9 @@ void Rectangle :: toString(){
 }
 
 bool Rectangle :: esQuadrat(){
-    return Getw() == Geth();
+        return Getw() == Geth();
 }
 
 Rectangle::~Rectangle(){
 //dtor
 }
-

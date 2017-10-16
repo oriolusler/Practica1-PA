@@ -42,8 +42,8 @@ class Dibuix
         int quantsS;
         int areaTotal;
 
-        FiguraGeometrica *nord[10];
-        FiguraGeometrica *sud[10];
+        FiguraGeometrica* nord[10];
+        FiguraGeometrica* sud[10];
 };
 
 #endif // DIBUIX_H

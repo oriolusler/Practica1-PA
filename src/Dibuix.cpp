@@ -14,8 +14,7 @@ Dibuix::Dibuix(int w, int h)
 }
 
 Dibuix::Dibuix(int w, int h, FiguraGeometrica *fg){
-    this->w = w;    // NO SE SI HA DE CRIDAR A L'ALTRE CONSTRUCTOR O NO
-    this->h = h;
+    Dibuix(w, h);
     addFigura(fg);
 }
 
@@ -49,8 +48,16 @@ bool Dibuix::addFigura(FiguraGeometrica *fg){    // NI IDEA DE SI FUNCIONA
 }
 
 bool Dibuix::comprobarCentre(FiguraGeometrica *fg){
-    for(auto & f: nord) if(fg->Gety() == f->Gety() && fg->Getx() == f->Getx()) return true;
-    for(auto & f: sud) if(fg->Gety() == f->Gety() && fg->Getx() == f->Getx()) return true;
+    for(auto & f: nord){
+        if(f != nullptr) {
+            if (fg->Gety() == f->Gety() && fg->Getx() == f->Getx()) return true;
+        }
+    }
+    for(auto & f: sud) {
+        if(f != nullptr) {
+            if (fg->Gety() == f->Gety() && fg->Getx() == f->Getx()) return true;
+        }
+    }
     return false;
 }
 
@@ -79,12 +86,12 @@ bool Dibuix::operator==(Dibuix *d){
 }
 
 bool Dibuix::buscarFigura(FiguraGeometrica *f, int i){
-    if(i == 0){
-        for(auto &fg : sud) if(fg == f) return true;
-    } else {
-        for(auto &fg : nord) if(fg == f) return true;
-    }
-    return false;
+     if(i == 0){
+         for(auto &fg : sud) if(fg == f) return true;
+     } else {
+         for(auto &fg : nord) if(fg == f) return true;
+     }
+     return false;
 }
 
 bool Dibuix::remFigura(FiguraGeometrica *f){        // FALTA MILLORAR IMPLEMENTACIÓ

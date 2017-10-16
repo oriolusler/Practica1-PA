@@ -19,7 +19,7 @@ Elipse::Elipse(int x,int y, int colorC, int colorF, int radi1, int radi2) : Figu
 }
 
 double Elipse :: area(){
-    return M_PI * Getradi1() * Getradi2();
+ return M_PI * Getradi1() * Getradi2();
 
 }
 

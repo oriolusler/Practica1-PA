@@ -25,5 +25,14 @@ int main() {
     e->toString();
 
 
+    FiguraGeometrica *s;
+    s = new Rectangle(1,1,8,4,2,3);
+
+    Dibuix *e;
+
+    e = new Dibuix(9,9,s);
+    e->toString();
+    cout << "HELLLLLLLO";
+
     return 0;
 }

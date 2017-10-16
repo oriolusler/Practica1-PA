@@ -17,7 +17,7 @@ FiguraGeometrica::FiguraGeometrica(int x, int y, int colorC, int colorF)
     Setx(xc);
     Sety(yc);*/
 
-    cout << "Creant FiguraGeometrica | 11 "<< endl;
+    //cout << "Creant FiguraGeometrica "<< endl;
 
     if(x<0||y<0) throw invalid_argument( "S'ha produit un error en variables X i y | FiguraGeometrica.cpp | 11");
     if(colorC != blanc && colorC != vermell && colorC != negre && colorC != blau) throw invalid_argument("No te un colorC assiganat |FiguraGeometrica.cpp | 14");

@@ -8,31 +8,27 @@ using namespace std;
 int main() {
 
     FiguraGeometrica *s;
-    s = new Rectangle(1,1,8,4,2,3);
+    s = new Rectangle(1,1,8,5,2,3);
+
+    FiguraGeometrica *o;
+    o = new Rectangle(1,1,5,4,2,3);
 
     Dibuix *e;
     e = new Dibuix(9,9,s);
     e->toString();
 
-    cout << "-------------------------------------";
-    try {
-        e->remFigura(s);
-    } catch (char*){
-        cout << "errrrror";
-    }
+    cout << "----------- " << "\n";
 
+    e->addFigura(o);
+    e->toString();
 
+    cout << "----------- " << "\n";
+
+    e->remFigura(o);
     e->toString();
 
 
-    FiguraGeometrica *s;
-    s = new Rectangle(1,1,8,4,2,3);
 
-    Dibuix *e;
-
-    e = new Dibuix(9,9,s);
-    e->toString();
-    cout << "HELLLLLLLO";
 
     return 0;
 }

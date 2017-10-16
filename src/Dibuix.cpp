@@ -28,10 +28,18 @@ Dibuix::~Dibuix()
 
 void Dibuix::toString(){
     cout << "Figures Ubicades al nord:" << endl;
-    for(auto & f: nord) f -> toString();
+    for(auto & f: nord) {
+        if(f != nullptr) {
+            f -> toString();
+        }
+    }
 
     cout << "Figures Ubicades al sud:" << endl;
-    for(auto & f: sud) f -> toString();
+    for(auto & f: sud) {
+        if(f != nullptr) {
+            f -> toString();
+        }
+    }
 
 }
 

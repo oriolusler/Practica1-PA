@@ -22,18 +22,15 @@ class Dibuix
         double getArea();
 
         bool addFigura(FiguraGeometrica *);
-        int DeterminarPos(FiguraGeometrica *);
 
         bool operator < (Dibuix *);
         bool operator > (Dibuix *);
         bool operator == (Dibuix *);
 
-        bool buscarFigura(FiguraGeometrica*, int);
-
         bool remFigura(FiguraGeometrica*)throw(char*);
         int remFigura(int);
 
-        bool comprobarCentre(FiguraGeometrica*);
+
     protected:
     private:
         int h;
@@ -44,6 +41,11 @@ class Dibuix
 
         FiguraGeometrica* nord[10];
         FiguraGeometrica* sud[10];
+
+        int DeterminarPos(FiguraGeometrica *);
+        bool buscarFigura(FiguraGeometrica*, int);
+        bool comprobarCentre(FiguraGeometrica*);
+
 };
 
 #endif // DIBUIX_H

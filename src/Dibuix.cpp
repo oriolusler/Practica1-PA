@@ -14,7 +14,10 @@ Dibuix::Dibuix(int w, int h)
 }
 
 Dibuix::Dibuix(int w, int h, FiguraGeometrica *fg){
-    Dibuix(w, h);
+    this->quantsN = 0;
+    this->quantsS = 0;
+    this->w = w;
+    this->h = h;
     addFigura(fg);
 }
 
@@ -94,7 +97,7 @@ bool Dibuix::buscarFigura(FiguraGeometrica *f, int i){
      return false;
 }
 
-bool Dibuix::remFigura(FiguraGeometrica *f){        // FALTA MILLORAR IMPLEMENTACIÓ
+bool Dibuix::remFigura(FiguraGeometrica *f) throw(char*){        // FALTA MILLORAR IMPLEMENTACIÓ
     int pos = DeterminarPos(f);
     if(!buscarFigura(f, pos)) throw  "Error, Figura no trobada";
     if(pos == 0){ //SUD

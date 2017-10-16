@@ -9,7 +9,7 @@ class Dibuix
 {
     public:
         Dibuix(int, int);
-        Dibuix(int, int, FiguraGeometrica *);
+        Dibuix(int, int, FiguraGeometrica*);
         virtual ~Dibuix();
         void toString();
 
@@ -28,12 +28,12 @@ class Dibuix
         bool operator > (Dibuix *);
         bool operator == (Dibuix *);
 
-        bool buscarFigura(FiguraGeometrica *, int);
+        bool buscarFigura(FiguraGeometrica*, int);
 
-        bool remFigura(FiguraGeometrica *);
+        bool remFigura(FiguraGeometrica*)throw(char*);
         int remFigura(int);
 
-        bool comprobarCentre(FiguraGeometrica *);
+        bool comprobarCentre(FiguraGeometrica*);
     protected:
     private:
         int h;

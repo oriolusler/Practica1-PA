@@ -1,47 +1,69 @@
 #ifndef DIBUIX_H
 #define DIBUIX_H
+
 #include "./FiguraGeometrica.h"
 #include "./Rectangle.h"
 #include "./Elipse.h"
 #include <iostream>
 
-class Dibuix
-{
-    public:
-        Dibuix(int, int) throw(char*);
-        Dibuix(int, int, FiguraGeometrica*);
-        virtual ~Dibuix();
-        void toString();
+class Dibuix {
+public:
+    Dibuix(int, int) throw(char*);
 
-        int Geth() { return h; }
-        int Getw() { return w; }
+    Dibuix(int, int, FiguraGeometrica *);
 
-        double getArea();
+    virtual ~Dibuix();
 
-        void addFigura(FiguraGeometrica *) throw(char*);
+    void toString();
 
-        bool operator < (Dibuix *);
-        bool operator > (Dibuix *);
-        bool operator == (Dibuix *);
+    int Geth() { return h; }
 
-        bool remFigura(FiguraGeometrica*)throw(char*);
-        int remFigura(int);
+    int Getw() { return w; }
+
+    double getArea();
+
+    void addFigura(FiguraGeometrica *) throw(char*);
+
+    bool operator<(Dibuix *);
+
+    bool operator>(Dibuix *);
+
+    bool operator==(Dibuix *);
+
+    bool remFigura(FiguraGeometrica *)throw(char*);
+
+    int remFigura(int);
 
 
-    protected:
-    private:
-        int h;
-        int w;
-        int quantsN;
-        int quantsS;
-        int areaTotal;
+protected:
+private:
 
-        FiguraGeometrica* nord[10];
-        FiguraGeometrica* sud[10];
+    struct node {
+        FiguraGeometrica *inf;
+        node *seg;
 
-        int DeterminarPos(FiguraGeometrica *);
-        bool buscarFigura(FiguraGeometrica*, int);
-        bool comprobarCentre(FiguraGeometrica*);
+        node(FiguraGeometrica *inf, node *seg) {
+            this->inf = inf;
+            this->seg = seg;
+        };
+
+
+    };
+
+    int h;
+    int w;
+    int quantsN;
+    int quantsS;
+    int areaTotal;
+
+    node *figures[2];
+
+    int DeterminarPos(FiguraGeometrica *);
+
+    bool buscarFigura(FiguraGeometrica *, int);
+
+    bool comprobarCentre(FiguraGeometrica *);
+
 
 };
 

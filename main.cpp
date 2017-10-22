@@ -8,27 +8,28 @@ using namespace std;
 int main() {
 
 
-    FiguraGeometrica *s;
-    s = new Rectangle(1, 1, 8, 6, 2, 3);
+    FiguraGeometrica *quadrat;
+    quadrat = new Rectangle(78, 78, 76, 78, 2, 0);
 
-    FiguraGeometrica *h;
-    h = new Elipse(1, 2, 3, 2, 3, 3);
+    FiguraGeometrica *rectangle;
+    rectangle = new Rectangle(135, 54, 145, 175, 4, 3);
+
+    FiguraGeometrica *elipse;
+    elipse = new Elipse(67, 122, 210, 125, 5, 3);
+
+    FiguraGeometrica *cercle;
+    cercle = new Elipse(25, 25, 100, 55, 0, 1);
 
     Dibuix *e;
-    e = new Dibuix(9, 9, s);
-    e->addFigura(h);
+    e = new Dibuix(800, 200);
 
+    e->addFigura(quadrat);
+    e->addFigura(rectangle);
+    e->addFigura(elipse);
+    e->addFigura(cercle);
 
 
     e->toString();
-
-
-    e->remFigura(2);
-
-    e -> toString();
-
-
-
 
 
     return 0;

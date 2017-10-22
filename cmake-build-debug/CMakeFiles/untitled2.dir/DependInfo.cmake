@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/marcviladot/CLionProjects/Practica1-PA/Practica1-PA/main.cpp" "/Users/marcviladot/CLionProjects/Practica1-PA/Practica1-PA/cmake-build-debug/CMakeFiles/untitled2.dir/main.cpp.o"
-  "/Users/marcviladot/CLionProjects/Practica1-PA/Practica1-PA/src/Dibuix.cpp" "/Users/marcviladot/CLionProjects/Practica1-PA/Practica1-PA/cmake-build-debug/CMakeFiles/untitled2.dir/src/Dibuix.cpp.o"
-  "/Users/marcviladot/CLionProjects/Practica1-PA/Practica1-PA/src/Elipse.cpp" "/Users/marcviladot/CLionProjects/Practica1-PA/Practica1-PA/cmake-build-debug/CMakeFiles/untitled2.dir/src/Elipse.cpp.o"
-  "/Users/marcviladot/CLionProjects/Practica1-PA/Practica1-PA/src/FiguraGeometrica.cpp" "/Users/marcviladot/CLionProjects/Practica1-PA/Practica1-PA/cmake-build-debug/CMakeFiles/untitled2.dir/src/FiguraGeometrica.cpp.o"
-  "/Users/marcviladot/CLionProjects/Practica1-PA/Practica1-PA/src/Rectangle.cpp" "/Users/marcviladot/CLionProjects/Practica1-PA/Practica1-PA/cmake-build-debug/CMakeFiles/untitled2.dir/src/Rectangle.cpp.o"
+  "C:/Users/PCOS/CLionProjects/untitled2/main.cpp" "C:/Users/PCOS/CLionProjects/untitled2/cmake-build-debug/CMakeFiles/untitled2.dir/main.cpp.obj"
+  "C:/Users/PCOS/CLionProjects/untitled2/src/Dibuix.cpp" "C:/Users/PCOS/CLionProjects/untitled2/cmake-build-debug/CMakeFiles/untitled2.dir/src/Dibuix.cpp.obj"
+  "C:/Users/PCOS/CLionProjects/untitled2/src/Elipse.cpp" "C:/Users/PCOS/CLionProjects/untitled2/cmake-build-debug/CMakeFiles/untitled2.dir/src/Elipse.cpp.obj"
+  "C:/Users/PCOS/CLionProjects/untitled2/src/FiguraGeometrica.cpp" "C:/Users/PCOS/CLionProjects/untitled2/cmake-build-debug/CMakeFiles/untitled2.dir/src/FiguraGeometrica.cpp.obj"
+  "C:/Users/PCOS/CLionProjects/untitled2/src/Rectangle.cpp" "C:/Users/PCOS/CLionProjects/untitled2/cmake-build-debug/CMakeFiles/untitled2.dir/src/Rectangle.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

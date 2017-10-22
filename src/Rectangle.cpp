@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Rectangle::Rectangle(int w, int h, int x , int y, int colorF, int colorC) : FiguraGeometrica (x, y, colorC, colorF) {
+Rectangle::Rectangle(int w, int h, int x , int y, int colorC, int colorF) : FiguraGeometrica (x, y, colorC, colorF) {
     if(w < 0 || h < 0) throw invalid_argument("Te una medida negativa |Rectangle.cpp | 10");
 
     this->w = w;
